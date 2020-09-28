@@ -43,11 +43,16 @@ namespace SortableDemo.Core
         /// <param name="item"></param>
         public void Insert(int index, IComparable item)
         {
-            if (index >= 0)
+            if (index >= 0 && index <= _itemCount)
             {
-                while (Count() < index)
+                if (_items.Length <= _itemCount)
                 {
+                    //Array muss vergrößert werden
                     EnlargeItemsArray();
+                }
+                for (int i = _itemCount; i > index; i--)
+                {
+                    _items[i] = _items[i - 1];
                 }
                 _items[index] = item;
                 _itemCount++;
@@ -63,10 +68,9 @@ namespace SortableDemo.Core
         {
             for (int i = 0; i < _itemCount; i++)
             {
-                if (item.CompareTo(_items[i]) == 0)
+                if (item == _items[i])
                 {
-                    _items[i] = null;
-                    _itemCount--;
+                    RemoveAt(i);
                     return true;
                 }
             }
@@ -79,9 +83,13 @@ namespace SortableDemo.Core
         /// <param name="index"></param>
         public void RemoveAt(int index)
         {
-            if (index < Count())
+            if (index >= 0 && index < _itemCount)
             {
-                _items[index] = null;
+                for (int i = index; i < _itemCount - 1; i++)
+                {
+                    _items[i] = _items[i + 1];
+                }
+                _items[_itemCount] = null;
                 _itemCount--;
             }
         }
@@ -106,10 +114,20 @@ namespace SortableDemo.Core
         /// </summary>
         public void Sort()
         {
-            for (int i = 0; i < _itemCount; i++)
+            IComparable temp;
+            for (int i = 0; i < _items.Length; i++)
             {
-                for (int j = i; j < _itemCount; j++)
+                for (int j = _items.Length - 1; j > i; j--)
                 {
+                    if (_items[j] == null)
+                    {
+                    }
+                    else if (_items[j - 1] == null || _items[j].CompareTo(_items[j - 1]) == -1)
+                    {
+                        temp = _items[j];
+                        _items[j] = _items[j - 1];
+                        _items[j - 1] = temp;
+                    }
                 }
             }
         }
@@ -129,7 +147,15 @@ namespace SortableDemo.Core
         /// <returns></returns>
         public IComparable GetHighestElement()
         {
-            throw new NotImplementedException();
+            IComparable temp = _items[0];
+            for (int i = 0; i < _items.Length - 1; i++)
+            {
+                if (_items[i + 1].CompareTo(_items[i]) == 1)
+                {
+                    temp = _items[i + 1];
+                }
+            }
+            return temp;
         }
 
         /// <summary>
