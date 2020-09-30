@@ -4,7 +4,7 @@ using System.Text;
 
 namespace SortableDemo.Core
 {
-    internal class Pupil : IComparable
+    public class Pupil : IComparable
     {
         private string _firstName;
 

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace SortableDemo.Core
 {
-    internal class Rational : IComparable
+    public class Rational : IComparable
     {
         private int _numerator;  // Zähler
         private int _denominator; // Nenner

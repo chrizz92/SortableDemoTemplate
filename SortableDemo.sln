@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29709.97
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SortableDemo.Core", "SortableDemo.Core\SortableDemo.Core.csproj", "{B58885F5-E095-40E0-87F2-4C184FFB6F1D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SortableDemo.Core", "SortableDemo.Core\SortableDemo.Core.csproj", "{B58885F5-E095-40E0-87F2-4C184FFB6F1D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SortableDemo.TestCore", "SortableDemo.TestSortableArrayList\SortableDemo.TestCore.csproj", "{95FC92C5-7D77-4392-BFEB-C8C420F39CE3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SortableDemo.TestCore", "SortableDemo.TestSortableArrayList\SortableDemo.TestCore.csproj", "{95FC92C5-7D77-4392-BFEB-C8C420F39CE3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SortableDemo.ConsoleApp", "SortableDemo.ConsoleApp\SortableDemo.ConsoleApp.csproj", "{596DFB94-D5F3-4ECC-AB52-B6A86FDBBB41}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{95FC92C5-7D77-4392-BFEB-C8C420F39CE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{95FC92C5-7D77-4392-BFEB-C8C420F39CE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{95FC92C5-7D77-4392-BFEB-C8C420F39CE3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{596DFB94-D5F3-4ECC-AB52-B6A86FDBBB41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{596DFB94-D5F3-4ECC-AB52-B6A86FDBBB41}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{596DFB94-D5F3-4ECC-AB52-B6A86FDBBB41}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{596DFB94-D5F3-4ECC-AB52-B6A86FDBBB41}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
